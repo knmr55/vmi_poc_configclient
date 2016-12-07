@@ -2,6 +2,14 @@ spring:
   profiles: development
   cloud:
     config:
-      name: vmi_poc_configclient  #property file starts with mosaic like sample-[loca]
+      name: vmi_poc_configclient  
+      uri: http://localhost:8888
+      failFast: false
+---
+spring:
+  profiles: ci
+  cloud:
+    config:
+      name: vmi_poc_configclient
       uri: http://localhost:8888
       failFast: false
